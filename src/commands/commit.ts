@@ -20,7 +20,7 @@ export const commit = (
       const addResult: boolean = await add(git, cpCodeConfig)()
 
       // Cancel prompts if escaped
-      if (addResult === false) {return}
+      if (addResult === false) { return }
     }
 
     let commitMessage: string = ""
@@ -51,7 +51,7 @@ export const commit = (
     await gitCommit(commitMessage)
 
     // Await for sync after commit so the change list gets updated.
-    await vscode.commands.executeCommand("git.sync")
+    await vscode.commands.executeCommand("git.refresh")
   }
 }
 

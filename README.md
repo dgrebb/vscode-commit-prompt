@@ -1,6 +1,6 @@
 # ⛏ vscode-commit-prompt
 
-![VS Marketplace Badge](https://vsmarketplacebadge.apphb.com/version-short/yaelguilloux.vscode-commit-prompt.svg)
+![VS Marketplace Badge](https://dgrebb.com/favicon.png)
 
 Commit **faster** and **cleaner** with keybound formatted **commit prompt** for VS Code.
 
@@ -112,11 +112,11 @@ If you want to lock scopes, and specify a list, you can by using the `scope` att
 Specify a list of scope, and you will be prompted to chose between them on each commit.
 
 ```typescript
-const scopes: CpScopeType;
+const scopes: CpScopeType
 
 export interface CpScopeType {
-  name: string;
-  description: string;
+  name: string
+  description: string
 }
 ```
 
@@ -142,13 +142,13 @@ If you specify this key in config, the default types will be overwritten by your
 Default can be found in [defaultTypes.ts](https://github.com/Tahul/vscode-commit-prompt/blob/main/src/helpers/defaultTypes.ts), copy/pasting them can be a great starting point for your own config.
 
 ```typescript
-const types: CommitPromptType[];
+const types: CommitPromptType[]
 
 interface CommitPromptType {
-  emoji?: string; // The emoji displayed (optional)
-  code: string; // The value added to the commit message (gitmojis works)
-  description: string; // The description displayed in the prompt
-  name: string; // An id
+  emoji?: string // The emoji displayed (optional)
+  code: string // The value added to the commit message (gitmojis works)
+  description: string // The description displayed in the prompt
+  name: string // An id
 }
 ```
 
@@ -178,15 +178,15 @@ This means you can easily build your own scenario from the config file.
 Note that using this key will result in both types and scopes keys to be useless, as you will have to specify these keys directly from your questions payloads.
 
 ```typescript
-const questions: Question[];
+const questions: Question[]
 
 export interface Question {
-  name: string;
-  type: "oneOf" | "input";
-  placeHolder: string;
-  emojiTypes?: CommitPromptType[];
-  scopes?: CpScopeType[];
-  format?: string;
+  name: string
+  type: 'oneOf' | 'input'
+  placeHolder: string
+  emojiTypes?: CommitPromptType[]
+  scopes?: CpScopeType[]
+  format?: string
 }
 ```
 

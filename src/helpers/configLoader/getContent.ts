@@ -29,7 +29,7 @@ function readConfigContent(configPath: string) {
     })
 
     return parsed
-  } catch (error) {
+  } catch (error: any) {
     error.message = [
       `Parsing JSON at ${configPath} for commitizen config failed:`,
       error.mesasge,
